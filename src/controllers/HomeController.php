@@ -4,7 +4,7 @@ namespace Src\Controllers;
 class HomeController
 {
     public function index()  {
-        echo "<h1>It's Working!</h1>";
+        echo "<html><body>It's Working!</body></hmtl>";
     }    
 }
 

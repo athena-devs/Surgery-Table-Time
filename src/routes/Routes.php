@@ -8,7 +8,7 @@ use Src\Core\Router;
 $router = new Router();
 
 // Home
-$router->add('GET', '/', [HomeController::class]);
+$router->add('GET', '/', [HomeController::class, 'index']);
 
 // --- Rotas para Materiais ---
 $router->add('GET', '/materials/{id}', [MaterialController::class, 'show']);
@@ -20,7 +20,4 @@ $router->add('PUT', '/materials/{id}', [MaterialController::class, 'update']);
 $router->add('GET', '/surgeries/{id}', [SurgeryController::class, 'show']);
 $router->add('POST', '/surgeries', [SurgeryController::class, 'store']);
 $router->add('PUT', '/surgeries/{id}', [SurgeryController::class, 'update']);
-?>
-
-
 ?>
