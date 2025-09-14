@@ -2,7 +2,7 @@
 
 require_once('../../config/<<!nav>>config.php<<!/nav>>');
 
-final class Database {
+final class Database extends mysqli {
  
     private $conn = null;
 

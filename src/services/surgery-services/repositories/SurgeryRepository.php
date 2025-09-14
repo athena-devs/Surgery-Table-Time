@@ -2,17 +2,17 @@
 
 namespace Src\Repositories;
 
+use Database;
 use Src\Models\Material;
 use Src\Models\Surgery;
 use Src\Repositories\MaterialRepository;
-use mysqli;
 
 class SurgeryRepository
 {
-    private mysqli $db;
+    private Database $db;
     private MaterialRepository $materialRepository;
 
-    public function __construct(mysqli $db, MaterialRepository $materialRepository){
+    public function __construct(Database $db, MaterialRepository $materialRepository){
         $this->db = $db;
         $this->materialRepository = $materialRepository;
     }

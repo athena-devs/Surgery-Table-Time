@@ -1,15 +1,15 @@
 <?php 
 namespace Src\Repositories;
 
+use Database;
 use Src\Models\Material;
-use mysqli;
 
 
 class MaterialRepository
 {
-    private mysqli $db;
+    private Database $db;
 
-    public function __construct(mysqli $db)
+    public function __construct(Database $db)
     {
         $this->db = $db;
     }
