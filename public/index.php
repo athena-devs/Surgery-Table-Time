@@ -10,3 +10,5 @@ $router = new Router();
 require __DIR__ . '/../src/routes/Routes.php';
 
 $router->dispatch();
+
+?>
