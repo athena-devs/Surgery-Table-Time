@@ -1,0 +1,45 @@
+volumes:
+  mysql-data:
+    driver: local
+    name: mysql-stt
+  app-data:
+    driver: local
+    name: app-stt
+
+networks:
+  php-stt:
+    name: php-stt
+
+services:
+  db:
+    image: mysql
+    restart: always
+    container_name: stt-mysql
+    env_file:
+      - .env
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DB: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3306:3306
+    networks:
+      - php-stt
+    volumes:
+      - mysql-data:/var/lib/mysql
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: stt-app
+    container_name: stt-app
+    volumes:
+      - app-data:/var/www/html
+    depends_on:
+      - db
+    ports:
+      - 8080:8080
+    networks:
+      - php-stt
+    restart: always

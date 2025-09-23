@@ -1,0 +1,7 @@
+vendor
+Dockerfile
+docker-compose.yaml
+.gitignore
+Readme.md
+LICENSE
+.dockerignore
